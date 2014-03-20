@@ -22,4 +22,4 @@
 
 ;; packages
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(autoload 'writeroom-mode "writeroom-mode" "Writerool Mode." t)
+(autoload 'writeroom-mode "writeroom-mode" "Writeroom Mode." t)
