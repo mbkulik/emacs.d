@@ -22,4 +22,8 @@
 
 ;; packages
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (autoload 'writeroom-mode "writeroom-mode" "Writeroom Mode." t)
+
+(autoload 'web-mode "web-mode" "Web Mode." t)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
