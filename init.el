@@ -12,7 +12,7 @@
 (electric-indent-mode)
 
 ;; set light background, better colors with iTerm2
-(setq frame-background-mode 'light)
+(setq frame-background-mode 'dark)
 
 ;; set backup and autosave to temp directory
 (setq backup-directory-alist
