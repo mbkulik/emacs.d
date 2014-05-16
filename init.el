@@ -12,13 +12,16 @@
 (electric-indent-mode)
 
 ;; set light background, better colors with iTerm2
-(setq frame-background-mode 'dark)
+(setq frame-background-mode 'light)
 
 ;; set backup and autosave to temp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; CC Mode
+(setq-default c-basic-offset 4)
 
 ;; packages
 (add-to-list 'load-path "~/.emacs.d/lisp/")
