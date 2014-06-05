@@ -23,10 +23,9 @@
 ;; CC Mode
 (setq-default c-basic-offset 4)
 
-;; packages
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (autoload 'writeroom-mode "writeroom-mode" "Writeroom Mode." t)
-
-(autoload 'web-mode "web-mode" "Web Mode." t)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
