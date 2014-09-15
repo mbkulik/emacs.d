@@ -12,7 +12,7 @@
 (electric-indent-mode)
 
 ;; set light background, better colors with iTerm2
-(setq frame-background-mode 'light)
+(setq frame-background-mode 'dark)
 
 ;; set backup and autosave to temp directory
 (setq backup-directory-alist
@@ -20,8 +20,17 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(set-face-foreground 'minibuffer-prompt "white")
+
 ;; CC Mode
 (setq-default c-basic-offset 4)
+
+;; whitespace highlighting
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
