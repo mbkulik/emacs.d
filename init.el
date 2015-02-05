@@ -25,6 +25,9 @@
 ;; CC Mode
 (setq-default c-basic-offset 4)
 
+(global-set-key (kbd "<f3>") 'compile)
+(setq compilation-read-command nil)
+
 ;; whitespace highlighting
 (require 'whitespace)
 (setq whitespace-line-column 80)
