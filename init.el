@@ -32,11 +32,13 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; CC Mode
-(setq-default c-basic-offset 4)
+;; indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq tab-width 4)
 
-(global-set-key (kbd "C-c DEL") 'kill-this-buffer)
-
+;; key bindings
+(global-set-key (kbd "<C-backspace>") 'kill-this-buffer)
 (global-set-key (kbd "<f3>") 'compile)
 (setq compilation-read-command nil)
 
@@ -51,6 +53,4 @@
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (autoload 'writeroom-mode "writeroom-mode" "Writeroom Mode." t)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
+(autoload 'org-mode "org-mode" "Org Mode." t)
