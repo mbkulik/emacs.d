@@ -18,6 +18,12 @@
 ;; better auto indentation
 (electric-indent-mode)
 
+;;ido mode
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-match t)
+
+
 ;; GUI Only Stuff
 (if window-system (load-theme 'tango-dark))
 (if window-system (tool-bar-mode -1))
@@ -42,6 +48,8 @@
 (global-set-key (kbd "<f3>") 'compile)
 (setq compilation-read-command nil)
 
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)`
+
 ;; whitespace highlighting
 (require 'whitespace)
 (setq whitespace-line-column 80)
@@ -49,8 +57,26 @@
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'latex-mode-hook 'whitespace-mode)
 
+(require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(package-initialize)
+
+(if (not (package-installed-p 'use-package))
+    (progn
+      (package-refresh-contents)
+      (package-install 'use-package)))
+
+(require 'use-package)
+
+;;;org-mode
+(use-package org
+             :ensure t)
+
+;;;writeroom-mode
+(use-package writeroom-mode
+             :ensure t)
 
 (autoload 'writeroom-mode "writeroom-mode" "Writeroom Mode." t)
 (autoload 'org-mode "org-mode" "Org Mode." t)
